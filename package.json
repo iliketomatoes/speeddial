@@ -1,0 +1,42 @@
+{
+  "name": "speeddial",
+  "version": "0.0.1",
+  "description": "Speed dial button inspired by Google Material design",
+  "main": "dist/speeddial.js",
+  "jsnext:main": "dist/index.mjs",
+  "scripts": {
+    "prebuild": "eslint lib test/specs",
+    "build": "rollup -c",
+    "build-css": "node-sass --include-path scss scss/speeddial.scss dist/css/speeddial.css",
+    "watch-css": "nodemon -e scss -x 'npm run build-css'",
+    "watch": "rollup -c -w",
+    "prepublish": "npm run build && npm test",
+    "test": "./node_modules/karma/bin/karma start"
+  },
+  "author": "Giancarlo Soverini",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^6.0.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "babel-register": "^6.9.0",
+    "babelrc-rollup": "^1.1.0",
+    "chai": "^3.5.0",
+    "eslint": "^2.11.1",
+    "install": "^0.8.1",
+    "karma": "^1.1.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-fixture": "^0.2.6",
+    "karma-html2js-preprocessor": "^1.0.0",
+    "karma-mocha": "^1.1.1",
+    "karma-mocha-reporter": "^2.0.4",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "mocha": "^2.5.3",
+    "node-sass": "^3.8.0",
+    "nodemon": "^1.9.2",
+    "rollup": "^0.30.0",
+    "rollup-plugin-babel": "^2.5.1"
+  }
+}

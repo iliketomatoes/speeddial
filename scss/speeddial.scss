@@ -1,0 +1,198 @@
+@import "mixins";
+$color: #FEFEFE;
+.material-btn {
+    display: inline-block;
+    position: relative;
+    min-width: 56px;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    margin: auto;
+    border-radius: 50%;
+    font-size: 24px;
+    overflow: hidden;
+    line-height: normal;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+    @include material-element();
+    color: rgba(#000, .87);
+    background: rgba(158, 158, 158, .2);
+}
+
+.speed-dial {
+    position: fixed;
+    top: 80px;
+    left: 40%;
+}
+
+.speed-dial__btn,
+.speed-dial__option {
+    box-sizing: border-box;
+    @extend .material-btn;
+}
+
+.speed-dial__btn--blue {
+    background: #2980b9;
+    color: rgb(255, 255, 255);
+}
+
+.speed-dial__btn--pink {
+    background: rgb(255, 64, 129);
+    color: rgb(255, 255, 255);
+}
+
+.speed-dial__list {
+    /* Properties dealing with initial state */
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    /* Constant properties */
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        display: inline-block;
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+    }
+}
+
+.speed-dial__option {
+    @include transform(scale(0));
+}
+
+.speed-dial--up .speed-dial__list {
+    bottom: 100%;
+    left: 0;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+
+    li {
+        margin: 0 0 4px 0;
+    }
+}
+
+.speed-dial--right .speed-dial__list {
+
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    bottom: 0;
+    padding-left: 10px;
+
+    li {
+        margin: 4px 0 0 4px;
+    }
+}
+
+.speed-dial--left .speed-dial__list {
+
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+
+    bottom: 0%;
+    padding-right: 10px;
+
+    li {
+        margin: 4px 4px 0 0;
+    }
+}
+
+.speed-dial--down .speed-dial__list {
+	-webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    top: 100%;
+    padding-top: 10px;
+
+    li {
+        margin: 4px 0 0 0;
+    }
+}
+
+.speed-dial__list.is-visible {
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+    .speed-dial__option {
+        -webkit-animation-name: enter;
+        animation-name: enter;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-duration: 0.1s;
+        animation-duration: 0.1s;
+    }
+    li:nth-of-type(1) .speed-dial__option {
+        -webkit-animation-delay: 0.1s;
+        animation-delay: 0.1s;
+    }
+    li:nth-of-type(2) .speed-dial__option {
+        -webkit-animation-delay: 0.2s;
+        animation-delay: 0.2s;
+    }
+    li:nth-of-type(3) .speed-dial__option {
+        -webkit-animation-delay: 0.3s;
+        animation-delay: 0.3s;
+    }
+    li:nth-of-type(4) .speed-dial__option {
+        -webkit-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+    }
+    li:nth-of-type(5) .speed-dial__option {
+        -webkit-animation-delay: 0.5s;
+        animation-delay: 0.5s;
+    }
+    li:nth-of-type(6) .speed-dial__option {
+        -webkit-animation-delay: 0.6s;
+        animation-delay: 0.6s;
+    }
+}
+
+@-webkit-keyframes enter {
+    from {
+        @include transform(scale(0));
+    }
+    to {
+        @include transform(scale(0.8));
+    }
+}
+
+@keyframes enter {
+    from {
+        @include transform(scale(0));
+    }
+    to {
+        @include transform(scale(0.8));
+    }
+}
