@@ -24,7 +24,6 @@
     "babelrc-rollup": "^1.1.0",
     "chai": "^3.5.0",
     "eslint": "^2.11.1",
-    "install": "^0.8.1",
     "karma": "^1.1.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^1.0.1",
@@ -37,6 +36,7 @@
     "node-sass": "^3.8.0",
     "nodemon": "^1.9.2",
     "rollup": "^0.30.0",
-    "rollup-plugin-babel": "^2.5.1"
+    "rollup-plugin-babel": "^2.5.1",
+    "rollup-watch": "^2.4.0"
   }
 }
