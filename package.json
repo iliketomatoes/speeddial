@@ -23,7 +23,7 @@
     "babel-register": "^6.9.0",
     "babelrc-rollup": "^1.1.0",
     "chai": "^3.5.0",
-    "eslint": "^2.11.1",
+    "eslint": "^3.0.1",
     "karma": "^1.1.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^1.0.1",
@@ -35,7 +35,7 @@
     "mocha": "^2.5.3",
     "node-sass": "^3.8.0",
     "nodemon": "^1.9.2",
-    "rollup": "^0.30.0",
+    "rollup": "^0.34.0",
     "rollup-plugin-babel": "^2.5.1",
     "rollup-watch": "^2.4.0"
   }
