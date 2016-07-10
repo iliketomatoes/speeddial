@@ -5,6 +5,7 @@ module.exports = function(config) {
         // Include the test and source files
         files: [
             'dist/*.js',
+            'dist/css/*.css',
             'test/vendor/*.js',
             {
                 pattern: 'test/templates/**/*'
