@@ -26,20 +26,49 @@
   color: rgba(0, 0, 0, 0.87);
   background: rgba(158, 158, 158, 0.2); }
 
-.speed-dial__btn--small {
+/**
+* A set of modifiers for the container which will effect the button and the
+* options
+*/
+.speed-dial--small .speed-dial__btn,
+.speed-dial--small .speed-dial__option {
   min-width: 32px;
   width: 32px;
   height: 32px;
   font-size: 16px; }
 
-.speed-dial__btn--blue {
+.speed-dial--blue .speed-dial__btn {
   background: #2980b9;
   color: white; }
 
-.speed-dial__btn--pink {
+.speed-dial--pink .speed-dial__btn {
   background: #ff4081;
   color: white; }
 
+.speed-dial--material .speed-dial__btn,
+.speed-dial--material .speed-dial__option {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: box-shadow 300ms ease-out;
+  transition: box-shadow 300ms ease-out; }
+  .speed-dial--material .speed-dial__btn:hover,
+  .speed-dial--material .speed-dial__option:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  .speed-dial--material .speed-dial__btn:active,
+  .speed-dial--material .speed-dial__option:active {
+    box-shadow: none; }
+
+/**
+* Eventually you can change the speed dial button appearence when
+* the list of options is open.
+*/
+.speed-dial--toggle .speed-dial__list.is-visible .speed-dial__btn {
+  box-shadow: none;
+  background: rgba(158, 158, 158, 0.2);
+  color: rgba(0, 0, 0, 0.87); }
+
+/**
+* Below are the main rules for the list of options
+*/
 .speed-dial__list {
   visibility: hidden;
   pointer-events: none;
@@ -118,11 +147,7 @@
 .speed-dial__list.is-visible {
   visibility: visible;
   pointer-events: auto;
-  opacity: 1;
-  /**
-    * Eventually you can change the speed dial button appearence when
-    * the option-list is open.
-    */ }
+  opacity: 1; }
   .speed-dial__list.is-visible .speed-dial__option {
     -webkit-animation-name: enter;
     animation-name: enter;

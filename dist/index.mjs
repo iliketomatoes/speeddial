@@ -50,10 +50,10 @@ var defaults = {
     // The actual speed dial button default class
     button: '.speed-dial__btn',
 
-    // Default option-list class
+    // Default list of options class
     list: '.speed-dial__list',
 
-    // Default option-list direction
+    // Default list of options direction
     direction: 'up'
 };
 
@@ -72,7 +72,7 @@ var SpeedDial = {
 
         /**
         * Get the HTMLElement which contains both the button
-        *    and the option-list
+        *    and the list of options
         */
         this.container = getElement(selector);
 
@@ -92,7 +92,7 @@ var SpeedDial = {
     },
 
     /**
-    * Get the button which triggers the option-list to open/close
+    * Get the button which triggers the list of options to open/close
     *
     * @return { HTMLElement }
     */
@@ -120,30 +120,30 @@ var SpeedDial = {
         var listEl = this.getList();
 
         if (listEl.classList.contains('is-visible')) {
-            // Close the option-list
+            // Close the list of options
             listEl.classList.remove('is-visible');
         } else {
-            // Open the option-list
+            // Open the list of options
             listEl.classList.add('is-visible');
         }
     },
 
-    // Close the option-list
+    // Close the list of options
     close: function close() {
         var listEl = this.getList();
         listEl.classList.remove('is-visible');
     },
 
-    // Open the option-list
+    // Open the list of options
     open: function open() {
         var listEl = this.getList();
         listEl.classList.add('is-visible');
     },
 
     /**
-    * Speed dial option-list can be viewed in 4 different directions:
+    * Speed dial list of options can be viewed in 4 different directions:
     *   'up', 'down', 'left', 'right'
-    *   The CSS class responsible to handle the option-list direction is added
+    *   The CSS class responsible to handle the list of options direction is added
     *   to the container
     *
     * @param { String } direction
@@ -185,7 +185,7 @@ var SpeedDial = {
 
     /**
     * Left and right directions require some style computation
-    *   in order to properly show the option-list
+    *   in order to properly show the list of options
     */
     styleUpdate: function styleUpdate() {
         var listEl = this.getList();
