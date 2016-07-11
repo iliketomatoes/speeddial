@@ -1,5 +1,11 @@
-.material-btn, .speed-dial__btn,
+/**
+* There are actually no default properties for the Speed Dial container.
+* It can either be fixed, absolute or relative, placed wherever you need it
+* to be.
+*/
+.speed-dial__btn,
 .speed-dial__option {
+  box-sizing: border-box;
   display: inline-block;
   position: relative;
   min-width: 56px;
@@ -17,28 +23,10 @@
   text-align: center;
   cursor: pointer;
   vertical-align: middle;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  -webkit-transition: box-shadow 300ms ease-out;
-  -moz-transition: box-shadow 300ms ease-out;
-  -ms-transition: box-shadow 300ms ease-out;
-  -o-transition: box-shadow 300ms ease-out;
-  transition: box-shadow 300ms ease-out;
   color: rgba(0, 0, 0, 0.87);
   background: rgba(158, 158, 158, 0.2); }
-  .material-btn:hover, .speed-dial__btn:hover,
-  .speed-dial__option:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
-  .material-btn:active, .speed-dial__btn:active,
-  .speed-dial__option:active {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none; }
 
-.speed-dial__btn,
-.speed-dial__option {
-  box-sizing: border-box; }
-
-.speed-dial--small {
+.speed-dial__btn--small {
   min-width: 32px;
   width: 32px;
   height: 32px;
@@ -53,11 +41,9 @@
   color: white; }
 
 .speed-dial__list {
-  /* Properties dealing with initial state */
   visibility: hidden;
   pointer-events: none;
   opacity: 0;
-  /* Constant properties */
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -90,9 +76,6 @@
     align-self: auto; }
 
 .speed-dial__option {
-  -moz-transform: scale(0);
-  -o-transform: scale(0);
-  -ms-transform: scale(0);
   -webkit-transform: scale(0);
   transform: scale(0); }
 
@@ -135,9 +118,11 @@
 .speed-dial__list.is-visible {
   visibility: visible;
   pointer-events: auto;
-  opacity: 1; }
-  .speed-dial__list.is-visible + .speed-dial__btn {
-    background: rgba(158, 158, 158, 0.2); }
+  opacity: 1;
+  /**
+    * Eventually you can change the speed dial button appearence when
+    * the option-list is open.
+    */ }
   .speed-dial__list.is-visible .speed-dial__option {
     -webkit-animation-name: enter;
     animation-name: enter;
@@ -166,28 +151,16 @@
 
 @-webkit-keyframes enter {
   from {
-    -moz-transform: scale(0);
-    -o-transform: scale(0);
-    -ms-transform: scale(0);
     -webkit-transform: scale(0);
     transform: scale(0); }
   to {
-    -moz-transform: scale(0.8);
-    -o-transform: scale(0.8);
-    -ms-transform: scale(0.8);
     -webkit-transform: scale(0.8);
     transform: scale(0.8); } }
 
 @keyframes enter {
   from {
-    -moz-transform: scale(0);
-    -o-transform: scale(0);
-    -ms-transform: scale(0);
     -webkit-transform: scale(0);
     transform: scale(0); }
   to {
-    -moz-transform: scale(0.8);
-    -o-transform: scale(0.8);
-    -ms-transform: scale(0.8);
     -webkit-transform: scale(0.8);
     transform: scale(0.8); } }
