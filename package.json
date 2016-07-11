@@ -8,10 +8,11 @@
     "prebuild": "eslint lib test/specs",
     "build": "rollup -c",
     "postbuild": "uglifyjs dist/speeddial.js -o dist/speeddial.min.js",
+    "banner": "headr dist/speeddial.js -o=dist/speeddial.js --version --homepage --license --author",
     "build-css": "node-sass --include-path scss scss/speeddial.scss dist/css/speeddial.css",
     "watch-css": "nodemon -e scss -x 'npm run build-css'",
     "watch": "rollup -c -w",
-    "prepublish": "npm run build && npm test",
+    "prepublish": "npm run build && npm test && npm run banner",
     "test": "./node_modules/karma/bin/karma start"
   },
   "keywords": [
@@ -26,6 +27,7 @@
   },
   "author": "Giancarlo Soverini",
   "license": "MIT",
+  "homepage": "https://github.com/iliketomatoes/speeddial",
   "bugs": {
     "url": "https://github.com/iliketomatoes/speeddial/issues"
   },
@@ -38,6 +40,7 @@
     "babelrc-rollup": "^1.1.0",
     "chai": "^3.5.0",
     "eslint": "^3.0.1",
+    "headr": "^0.1.0",
     "karma": "^1.1.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^1.0.1",
