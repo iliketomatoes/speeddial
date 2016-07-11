@@ -7,14 +7,28 @@
   "scripts": {
     "prebuild": "eslint lib test/specs",
     "build": "rollup -c",
+    "postbuild": "uglifyjs dist/speeddial.js -o dist/speeddial.min.js",
     "build-css": "node-sass --include-path scss scss/speeddial.scss dist/css/speeddial.css",
     "watch-css": "nodemon -e scss -x 'npm run build-css'",
     "watch": "rollup -c -w",
     "prepublish": "npm run build && npm test",
     "test": "./node_modules/karma/bin/karma start"
   },
+  "keywords": [
+    "floating",
+    "button",
+    "speed dial",
+    "menu"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iliketomatoes/speeddial.git"
+  },
   "author": "Giancarlo Soverini",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iliketomatoes/speeddial/issues"
+  },
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^6.0.4",
