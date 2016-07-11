@@ -1,0 +1,70 @@
+<!doctype html>
+<!-- You need to run `npm run build` before opening this in your browser -->
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Speed Dial button</title>
+    <meta name="description" content="Speed dial floating button inspired by Google Material design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans" rel="stylesheet">
+	<!--<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">-->
+
+	<link rel="stylesheet" href="demo/vendor/typebase.css">
+	<link rel="stylesheet" href="demo/app.css">
+	<link rel="stylesheet" href="dist/css/speeddial.css">
+</head>
+<body>
+
+	<header class="banner">
+		<h1 class="banner__title">Speed dial floating button</h1>
+		<h3 class="banner__title">Inspired by Google Material design</h3>
+	</header>
+
+	<article>
+		<h2>Getting started</h2>
+		<p>Bla bla bla</p>
+	</article>
+
+	
+
+	<div class="speed-dial speed-dial--blue" style="position:fixed;top:20px;right:20px;">
+		<ul class="speed-dial__list">
+			<li>
+				<button class="speed-dial__option">B</button>
+			</li>
+			<li>
+				<button class="speed-dial__option">C</button>
+			</li>
+			<li>
+				<button class="speed-dial__option" href="#">D</button>
+			</li>
+		</ul>
+		<button class="speed-dial__btn">A</button>
+	</div>
+	<div id="lang-picker" class="speed-dial--small speed-dial--pink" style="position:fixed;right:20px;bottom:20px;">
+		<ul class="speed-dial__list">
+			<li>
+				<button class="speed-dial__option" href="#">E</button>
+			</li>
+			<li>
+				<button class="speed-dial__option">F</button>
+			</li>
+			<li>
+				<button class="speed-dial__option" href="#">G</button>
+			</li>
+		</ul>
+		<button class="speed-dial__btn">D</button>
+	</div>
+	<script src="dist/speeddial.js"></script>
+	<script>
+		(function() {
+			var sd = speeddial('.speed-dial', { direction: 'down'});
+			var lp = speeddial('#lang-picker', { direction: 'left'});
+		}());
+	</script>
+</body>
+</html>

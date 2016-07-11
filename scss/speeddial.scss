@@ -1,6 +1,6 @@
 @import "mixins";
 
-$option-bg: rgba(158, 158, 158, .2);
+$option-bg: #EEEEEE;
 $option-font-color: rgba(#000, .87);
 
 /**
@@ -13,29 +13,63 @@ $option-font-color: rgba(#000, .87);
 .speed-dial__btn,
 .speed-dial__option {
     @include round-button();
-    // UNCOMMENT THIS LINE IF YOU WANT TO HAVE BOX-SHADOW
+    // UNCOMMENT THIS LINE IF YOU WANT TO HAVE BOX-SHADOW BY DEFAULT
     // @include material-element(1, 2);
     color: $option-font-color;
     background: $option-bg;
 }
 
-.speed-dial__btn--small {
-    min-width: 32px;
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
+
+/**
+* A set of modifiers for the container which will effect the button and the
+* options
+*/
+.speed-dial--small {
+    .speed-dial__btn,
+    .speed-dial__option {
+        min-width: 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
 }
 
-.speed-dial__btn--blue {
-    background: #2980b9;
-    color: rgb(255, 255, 255);
+.speed-dial--blue {
+    .speed-dial__btn {
+        background: #2980b9;
+        color: rgb(255, 255, 255);
+    }
 }
 
-.speed-dial__btn--pink {
-    background: rgb(255, 64, 129);
-    color: rgb(255, 255, 255);
+.speed-dial--pink {
+    .speed-dial__btn {
+        background: rgb(255, 64, 129);
+        color: rgb(255, 255, 255);
+    }
 }
 
+.speed-dial--material {
+    .speed-dial__btn,
+    .speed-dial__option {
+        @include material-element(1, 3);
+    }
+}
+
+/**
+* Eventually you can change the speed dial button appearence when
+* the list of options is open.
+*/
+.speed-dial--toggle .speed-dial__list.is-visible {
+    .speed-dial__btn {
+        box-shadow: none;
+        background: $option-bg;
+        color: rgba(#000, .87);
+    }
+}
+
+/**
+* Below are the main rules for the list of options
+*/
 .speed-dial__list {
     // Properties dealing with initial state
     visibility: hidden;
@@ -76,7 +110,7 @@ $option-font-color: rgba(#000, .87);
 }
 
 .speed-dial__option {
-    // Initial state for the option-list items
+    // Initial state for the list of options items
     @include transform(scale(0));
 }
 
@@ -137,15 +171,6 @@ $option-font-color: rgba(#000, .87);
     visibility: visible;
     pointer-events: auto;
     opacity: 1;
-
-    /**
-    * Eventually you can change the speed dial button appearence when
-    * the option-list is open.
-    */
-    & + .speed-dial__btn {
-      // box-shadow: none;
-      // background: $option-bg;
-    }
 
     .speed-dial__option {
         -webkit-animation-name: enter;

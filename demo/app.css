@@ -1,0 +1,36 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: #D1E9EA;
+	color: rgba(0, 0, 0, 0.78);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Bitter', serif;
+}
+
+a {
+	color: #5f2aed;
+}
+
+/* Banner */
+
+.banner {
+	padding: 3rem 1rem 1rem;
+	background: #415F77;
+}
+
+.banner__title {
+	color: #FFFFFF;
+}
+
+/* articles */
+
+article {
+	padding: 1rem;
+	max-width: 980px;
+}

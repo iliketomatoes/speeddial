@@ -24,7 +24,7 @@
   cursor: pointer;
   vertical-align: middle;
   color: rgba(0, 0, 0, 0.87);
-  background: rgba(158, 158, 158, 0.2); }
+  background: #EEEEEE; }
 
 /**
 * A set of modifiers for the container which will effect the button and the
@@ -63,7 +63,7 @@
 */
 .speed-dial--toggle .speed-dial__list.is-visible .speed-dial__btn {
   box-shadow: none;
-  background: rgba(158, 158, 158, 0.2);
+  background: #EEEEEE;
   color: rgba(0, 0, 0, 0.87); }
 
 /**
