@@ -157,7 +157,7 @@
       setDirection: function setDirection(direction) {
 
           // Clean the classList first
-          this.container.classList.remove('speed-dial--up', 'speed-dial--down', 'speed-dial--left', 'speed-dial--right');
+          this.container.classList.remove('speed-dial--' + this.settings.direction);
 
           switch (direction) {
               case 'up':
@@ -176,6 +176,9 @@
                   this.container.classList.add('speed-dial--up');
                   break;
           }
+
+          // Update the settings object with the new direction
+          this.settings.direction = direction;
 
           // Call an helper to set some style with Javascript
           this.styleUpdate();
@@ -243,8 +246,8 @@
           return sd.getDirection();
       }
 
-      function setDirection() {
-          return sd.setDirection();
+      function setDirection(direction) {
+          return sd.setDirection(direction);
       }
 
       function close() {
