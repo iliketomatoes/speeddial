@@ -1,38 +1,29 @@
 @import "mixins";
-$color: #FEFEFE;
-.material-btn {
-    display: inline-block;
-    position: relative;
-    min-width: 56px;
-    width: 56px;
-    height: 56px;
-    padding: 0;
-    margin: auto;
-    border-radius: 50%;
-    font-size: 24px;
-    overflow: hidden;
-    line-height: normal;
-    border: none;
-    outline: none;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    vertical-align: middle;
-    @include material-element();
-    color: rgba(#000, .87);
-    background: rgba(158, 158, 158, .2);
-}
 
-.speed-dial {
-    position: fixed;
-    top: 80px;
-    left: 40%;
-}
+$option-bg: rgba(158, 158, 158, .2);
+$option-font-color: rgba(#000, .87);
+
+/**
+* There are actually no default properties for the Speed Dial container.
+* It can either be fixed, absolute or relative, placed wherever you need it
+* to be.
+*/
+.speed-dial {}
 
 .speed-dial__btn,
 .speed-dial__option {
-    box-sizing: border-box;
-    @extend .material-btn;
+    @include round-button();
+    // UNCOMMENT THIS LINE IF YOU WANT TO HAVE BOX-SHADOW
+    // @include material-element(1, 2);
+    color: $option-font-color;
+    background: $option-bg;
+}
+
+.speed-dial__btn--small {
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
 }
 
 .speed-dial__btn--blue {
@@ -46,11 +37,11 @@ $color: #FEFEFE;
 }
 
 .speed-dial__list {
-    /* Properties dealing with initial state */
+    // Properties dealing with initial state
     visibility: hidden;
     pointer-events: none;
     opacity: 0;
-    /* Constant properties */
+    // Constant properties
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -85,6 +76,7 @@ $color: #FEFEFE;
 }
 
 .speed-dial__option {
+    // Initial state for the option-list items
     @include transform(scale(0));
 }
 
@@ -129,7 +121,7 @@ $color: #FEFEFE;
 }
 
 .speed-dial--down .speed-dial__list {
-	-webkit-flex-direction: column;
+    -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
 
@@ -145,6 +137,16 @@ $color: #FEFEFE;
     visibility: visible;
     pointer-events: auto;
     opacity: 1;
+
+    /**
+    * Eventually you can change the speed dial button appearence when
+    * the option-list is open.
+    */
+    & + .speed-dial__btn {
+      // box-shadow: none;
+      // background: $option-bg;
+    }
+
     .speed-dial__option {
         -webkit-animation-name: enter;
         animation-name: enter;
