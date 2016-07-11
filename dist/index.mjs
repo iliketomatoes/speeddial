@@ -4,6 +4,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj;
 };
 
+/**
+* Deep-extends an object with another object
+*
+* @param { Object } a The object that will be extended, then returned
+* @param { Object } b The object that will extend the first paramter
+* @return { Object }
+*/
 function extend(a, b) {
     for (var key in b) {
         if (b.hasOwnProperty(key)) {
@@ -15,6 +22,26 @@ function extend(a, b) {
         }
     }
     return a;
+}
+
+/**
+* Utility function that throws an error if querySelector returns null
+*
+* @param { String } selector
+* @param { HTMLElement } context If not specified the default context is the
+*   whole document
+* @return { HTMLElement }
+*/
+function getElement(selector, context) {
+    var where = context || document;
+    var element = where.querySelector(selector);
+    try {
+        if (element === null) throw new Error('SpeedDial could not find any ${selector}');
+    } catch (err) {
+        console.log(err.message);
+    } finally {
+        return element;
+    }
 }
 
 // Default settings
@@ -47,14 +74,11 @@ var SpeedDial = {
         * Get the HTMLElement which contains both the button
         *    and the option-list
         */
-        this.container = document.querySelector(selector);
+        this.container = getElement(selector);
 
-        try {
-            if (this.container === null) throw new Error('SpeedDial could not find any HTML element that matches the given selector.');
+        if (this.container) {
             this.bindEvents();
             this.setDirection(this.settings.direction);
-        } catch (err) {
-            console.error(err.message);
         }
     },
 
@@ -73,14 +97,7 @@ var SpeedDial = {
     * @return { HTMLElement }
     */
     getButton: function getButton() {
-        var btn = this.container.querySelector(this.settings.button);
-        try {
-            if (btn === null) throw new Error('SpeedDial could not find any button.');
-        } catch (err) {
-            console.log(err.message);
-        } finally {
-            return btn;
-        }
+        return getElement(this.settings.button, this.container);
     },
 
     /**
@@ -89,14 +106,7 @@ var SpeedDial = {
     * @return { HTMLElement }
     */
     getList: function getList() {
-        var list = this.container.querySelector(this.settings.list);
-        try {
-            if (list === null) throw new Error('SpeedDial could not find any option-list.');
-        } catch (err) {
-            console.log(err.message);
-        } finally {
-            return list;
-        }
+        return getElement(this.settings.list, this.container);
     },
 
     // Add click listener to the speed-dial button
