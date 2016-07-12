@@ -1,7 +1,7 @@
 /**
   * speeddial - Speed dial button inspired by Google Material design
   *
-  * @version v0.2.2
+  * @version v0.2.3
   * @homepage https://github.com/iliketomatoes/speeddial
   * @license MIT
   * @author Giancarlo Soverini
