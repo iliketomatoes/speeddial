@@ -53,10 +53,9 @@
 				</ul>
 				<button class="speed-dial__btn">X</button>
 			</div>
-
 		</section>
 
-		<!-- Colored examples -->
+		<!-- Colored example -->
 		<section>
 			<h3>Colored:</h3>
 
@@ -91,10 +90,9 @@
 				</ul>
 				<button class="speed-dial__btn">X</button>
 			</div>
-
 		</section>
 
-		<!-- Material examples -->
+		<!-- Material example -->
 		<section>
 			<h3>Material:</h3>
 
@@ -112,13 +110,12 @@
 				</ul>
 				<button class="speed-dial__btn">X</button>
 			</div>
-
 		</section>
 
-		<!-- Material examples -->
+		<!-- Ripple effect example -->
 		<section>
-			<h3>Material + blue button + ripple effect:</h3>
-
+			<h3>Ripple effect:</h3>
+			<p>The ripple effect is given by the <a href="http://fian.my.id/Waves/">awesome plugin Waves</a></p>
 			<div id="blue-ripple-material" class="speed-dial speed-dial--material speed-dial--blue" style="position:relative;margin-top:20px">
 				<ul class="speed-dial__list">
 					<li>
@@ -133,11 +130,49 @@
 				</ul>
 				<button class="speed-dial__btn">X</button>
 			</div>
+		</section>
 
+		<!-- Small example -->
+		<section>
+			<h3>Small:</h3>
+			<div id="small" class="speed-dial speed-dial--material speed-dial--pink speed-dial--small" style="position:relative;margin-top:20px">
+				<ul class="speed-dial__list">
+					<li>
+						<button class="speed-dial__option">K</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">J</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">Y</button>
+					</li>
+				</ul>
+				<button class="speed-dial__btn">X</button>
+			</div>
 		</section>
 
 	</article>
 
+	<footer>
+		<h3>Credits</h3>
+		<p>
+			Author: Giancarlo Soverini aka <a href="https://github.com/iliketomatoes">iliketomatoes</a>
+			<br>
+			Inspired by:
+			<ul>
+				<li>
+					<a href="https://medium.com/@_jh3y/how-to-create-the-speed-dial-style-floating-action-button-from-material-design-b30d49f9a0ff#.ka4ws1o2a">
+						Jhey Tompkins' article on Medium
+					</a>
+				</li>
+				<li>
+					<a href="https://material.google.com/components/buttons-floating-action-button.htm">
+						Google Material Design's floating action button
+					</a>
+				</li>
+			</ul>
+		</p>
+	</footer>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
 	<script src="./demo/vendor/waves.min.js"></script>
@@ -151,7 +186,9 @@
 			var pink = speeddial('#pink', { direction: 'right'});
 			var material = speeddial('#material', { direction: 'right'});
 			var brmBtn = speeddial('#blue-ripple-material', { direction: 'right'});
+			var smallBtn = speeddial('#small', { direction: 'right'});
 			Waves.attach('#blue-ripple-material button');
+			Waves.attach('#small button');
     		Waves.init();
 		}());
 	</script>

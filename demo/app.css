@@ -42,3 +42,12 @@ article {
 	padding: 1rem 1rem 2rem;
 	max-width: 840px;
 }
+
+/* footer */
+
+footer {
+	margin: 0 auto;
+	padding: 1rem;
+	max-width: 840px;
+	font-size: 0.9em;
+}
