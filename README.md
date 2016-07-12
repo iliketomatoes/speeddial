@@ -37,7 +37,7 @@ This Javascript library is UMD compliant, so you can consume it even like this:
 ## Required markup
 
 ```html
-<div id="my-speed-dial">
+<div id="my-speed-dial" class="speed-dial">
 	<ul class="speed-dial__list">
 		<li>
 			<button class="speed-dial__option">B</button>

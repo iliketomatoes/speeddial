@@ -38,7 +38,7 @@ function getElement(selector, context) {
     try {
         if (element === null) throw new Error('SpeedDial could not find any ${selector}');
     } catch (err) {
-        console.log(err.message);
+        console.error(err.message);
     } finally {
         return element;
     }
