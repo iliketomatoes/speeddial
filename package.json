@@ -1,6 +1,6 @@
 {
   "name": "speeddial",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Speed dial button inspired by Google Material design",
   "main": "dist/speeddial.js",
   "jsnext:main": "dist/index.mjs",
