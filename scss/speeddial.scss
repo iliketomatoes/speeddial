@@ -4,11 +4,12 @@ $option-bg: #EEEEEE;
 $option-font-color: rgba(#000, .87);
 
 /**
-* There are actually no default properties for the Speed Dial container.
-* It can either be fixed, absolute or relative, placed wherever you need it
-* to be.
+* The only required property for the container is the display property,
+* that must be inline-block 
 */
-.speed-dial {}
+.speed-dial {
+    display: inline-block;
+}
 
 .speed-dial__btn,
 .speed-dial__option {

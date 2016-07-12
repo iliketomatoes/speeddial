@@ -15,6 +15,11 @@ h6 {
 
 a {
 	color: #5f2aed;
+	text-decoration: underline;
+}
+
+a:hover, a:active, a:visited {
+	color: #3e10bb;
 }
 
 /* Banner */
@@ -32,5 +37,5 @@ a {
 
 article {
 	padding: 1rem;
-	max-width: 980px;
+	max-width: 760px;
 }

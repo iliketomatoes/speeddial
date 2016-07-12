@@ -10,12 +10,12 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans" rel="stylesheet">
-	<!--<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/default.min.css">
 
-	<link rel="stylesheet" href="demo/vendor/typebase.css">
-	<link rel="stylesheet" href="demo/app.css">
-	<link rel="stylesheet" href="dist/css/speeddial.css">
+	<link rel="stylesheet" href="./demo/vendor/typebase.css">
+	<link rel="stylesheet" href="./demo/app.css">
+	<link rel="stylesheet" href="./dist/css/speeddial.css">
 </head>
 <body>
 
@@ -26,44 +26,42 @@
 
 	<article>
 		<h2>Getting started</h2>
-		<p>Bla bla bla</p>
+		<p>
+			Get the necessary files and read the documentation of this Javascript+CSS plugin on the <a href="https://github.com/iliketomatoes/speeddial">Github repository</a>.
+			You can also install <strong>speeddial</strong> through this command:
+		</p>
+		<pre><code class="hljs bash">$ npm install speeddial --save</code></pre>
+	</article>
+
+	<article>
+		<h2>Examples</h2>
+		<section>
+			<h3>Basic:</h3>
+			<div id="lang-picker" class="speed-dial--small speed-dial--pink" style="position:relative;">
+				<ul class="speed-dial__list">
+					<li>
+						<button class="speed-dial__option">E</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">F</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">G</button>
+					</li>
+				</ul>
+				<button class="speed-dial__btn">D</button>
+			</div>
+		</section>
 	</article>
 
 
-
-	<div class="speed-dial speed-dial--blue" style="position:fixed;top:20px;right:20px;">
-		<ul class="speed-dial__list">
-			<li>
-				<button class="speed-dial__option">B</button>
-			</li>
-			<li>
-				<button class="speed-dial__option">C</button>
-			</li>
-			<li>
-				<button class="speed-dial__option">D</button>
-			</li>
-		</ul>
-		<button class="speed-dial__btn">A</button>
-	</div>
-	<div id="lang-picker" class="speed-dial--small speed-dial--pink" style="position:fixed;right:20px;bottom:20px;">
-		<ul class="speed-dial__list">
-			<li>
-				<button class="speed-dial__option">E</button>
-			</li>
-			<li>
-				<button class="speed-dial__option">F</button>
-			</li>
-			<li>
-				<button class="speed-dial__option">G</button>
-			</li>
-		</ul>
-		<button class="speed-dial__btn">D</button>
-	</div>
-	<script src="dist/speeddial.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+	<script src="./dist/speeddial.js"></script>
 	<script>
 		(function() {
-			var sd = speeddial('.speed-dial', { direction: 'down'});
-			var lp = speeddial('#lang-picker', { direction: 'left'});
+			hljs.initHighlightingOnLoad();
+			// var sd = speeddial('.speed-dial', { direction: 'down'});
+			var lp = speeddial('#lang-picker', { direction: 'right'});
 		}());
 	</script>
 </body>
