@@ -25,6 +25,10 @@
   text-align: center;
   cursor: pointer;
   vertical-align: middle;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
   color: rgba(0, 0, 0, 0.87);
   background: #EEEEEE; }
 

@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/default.min.css">
-
+	<link rel="stylesheet" href="./demo/vendor/waves.css">
 	<link rel="stylesheet" href="./demo/vendor/typebase.css">
 	<link rel="stylesheet" href="./demo/app.css">
 	<link rel="stylesheet" href="./dist/css/speeddial.css">
@@ -21,7 +21,6 @@
 
 	<header class="banner">
 		<h1 class="banner__title">Speed dial floating button</h1>
-		<h3 class="banner__title">Inspired by Google Material design</h3>
 	</header>
 
 	<article>
@@ -35,33 +34,125 @@
 
 	<article>
 		<h2>Examples</h2>
+
+		<!-- Basic example -->
 		<section>
 			<h3>Basic:</h3>
-			<div id="lang-picker" class="speed-dial speed-dial--small speed-dial--pink" style="position:relative;">
+
+			<div id="basic" class="speed-dial" style="position:relative;margin-top:20px">
 				<ul class="speed-dial__list">
 					<li>
-						<button class="speed-dial__option">E</button>
+						<button class="speed-dial__option">K</button>
 					</li>
 					<li>
-						<button class="speed-dial__option">F</button>
+						<button class="speed-dial__option">J</button>
 					</li>
 					<li>
-						<button class="speed-dial__option">G</button>
+						<button class="speed-dial__option">Y</button>
 					</li>
 				</ul>
-				<button class="speed-dial__btn">D</button>
+				<button class="speed-dial__btn">X</button>
 			</div>
+
 		</section>
+
+		<!-- Colored examples -->
+		<section>
+			<h3>Colored:</h3>
+
+			<div id="blue" class="speed-dial speed-dial--blue" style="position:relative;margin-top:20px">
+				<ul class="speed-dial__list">
+					<li>
+						<button class="speed-dial__option">K</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">J</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">Y</button>
+					</li>
+				</ul>
+				<button class="speed-dial__btn">X</button>
+			</div>
+
+			<br>
+
+			<div id="pink" class="speed-dial speed-dial--pink" style="position:relative;margin-top:20px">
+				<ul class="speed-dial__list">
+					<li>
+						<button class="speed-dial__option">K</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">J</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">Y</button>
+					</li>
+				</ul>
+				<button class="speed-dial__btn">X</button>
+			</div>
+
+		</section>
+
+		<!-- Material examples -->
+		<section>
+			<h3>Material:</h3>
+
+			<div id="material" class="speed-dial speed-dial--material" style="position:relative;margin-top:20px">
+				<ul class="speed-dial__list">
+					<li>
+						<button class="speed-dial__option">K</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">J</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">Y</button>
+					</li>
+				</ul>
+				<button class="speed-dial__btn">X</button>
+			</div>
+
+		</section>
+
+		<!-- Material examples -->
+		<section>
+			<h3>Material + blue button + ripple effect:</h3>
+
+			<div id="blue-ripple-material" class="speed-dial speed-dial--material speed-dial--blue" style="position:relative;margin-top:20px">
+				<ul class="speed-dial__list">
+					<li>
+						<button class="speed-dial__option">K</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">J</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">Y</button>
+					</li>
+				</ul>
+				<button class="speed-dial__btn">X</button>
+			</div>
+
+		</section>
+
 	</article>
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+	<script src="./demo/vendor/waves.min.js"></script>
 	<script src="./dist/speeddial.js"></script>
 	<script>
 		(function() {
 			hljs.initHighlightingOnLoad();
 			// var sd = speeddial('.speed-dial', { direction: 'down'});
-			var lp = speeddial('#lang-picker', { direction: 'right'});
+			var basic = speeddial('#basic', { direction: 'right'});
+			var blue = speeddial('#blue', { direction: 'right'});
+			var pink = speeddial('#pink', { direction: 'right'});
+			var material = speeddial('#material', { direction: 'right'});
+			var brmBtn = speeddial('#blue-ripple-material', { direction: 'right'});
+			Waves.attach('#blue-ripple-material button');
+    		Waves.init();
 		}());
 	</script>
 </body>

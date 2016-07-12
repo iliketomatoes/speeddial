@@ -25,8 +25,10 @@ a:hover, a:active, a:visited {
 /* Banner */
 
 .banner {
-	padding: 3rem 1rem 1rem;
+	overflow: auto;
+	padding: 4rem 1rem 1rem;
 	background: #415F77;
+	margin-bottom: 3rem;
 }
 
 .banner__title {
@@ -36,6 +38,7 @@ a:hover, a:active, a:visited {
 /* articles */
 
 article {
-	padding: 1rem;
-	max-width: 760px;
+	margin: 0 auto;
+	padding: 1rem 1rem 2rem;
+	max-width: 840px;
 }

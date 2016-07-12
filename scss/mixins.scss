@@ -53,4 +53,7 @@
     text-align: center;
     cursor: pointer;
     vertical-align: middle;
+    @include transform(translate3d(0,0,0));
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
