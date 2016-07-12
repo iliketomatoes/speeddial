@@ -5,15 +5,22 @@ $option-font-color: rgba(#000, .87);
 
 /**
 * The only required property for the container is the display property,
-* that must be inline-block 
+* that must be inline-block
 */
 .speed-dial {
     display: inline-block;
 }
 
-.speed-dial__btn,
-.speed-dial__option {
+.speed-dial__btn {
     @include round-button();
+    // UNCOMMENT THIS LINE IF YOU WANT TO HAVE BOX-SHADOW BY DEFAULT
+    // @include material-element(1, 2);
+    color: $option-font-color;
+    background: $option-bg;
+}
+
+.speed-dial__option {
+    @include round-button(46px, 19px);
     // UNCOMMENT THIS LINE IF YOU WANT TO HAVE BOX-SHADOW BY DEFAULT
     // @include material-element(1, 2);
     color: $option-font-color;
@@ -26,12 +33,18 @@ $option-font-color: rgba(#000, .87);
 * options
 */
 .speed-dial--small {
-    .speed-dial__btn,
-    .speed-dial__option {
+    .speed-dial__btn {
         min-width: 32px;
         width: 32px;
         height: 32px;
         font-size: 16px;
+    }
+
+    .speed-dial__option {
+        min-width: 26px;
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
     }
 }
 
@@ -61,10 +74,10 @@ $option-font-color: rgba(#000, .87);
 * the list of options is open.
 */
 .speed-dial--toggle .speed-dial__list.is-visible {
-    .speed-dial__btn {
-        box-shadow: none;
-        background: $option-bg;
-        color: rgba(#000, .87);
+    & + .speed-dial__btn {
+        box-shadow: none !important;
+        background: $option-bg !important;
+        color: $option-font-color !important;
     }
 }
 
@@ -115,59 +128,127 @@ $option-font-color: rgba(#000, .87);
     @include transform(scale(0));
 }
 
-.speed-dial--up .speed-dial__list {
-    bottom: 100%;
-    left: 0;
-    -webkit-flex-direction: column-reverse;
-    -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse;
+/* UP */
+.speed-dial--up {
 
-    li {
-        margin: 0 0 4px 0;
+    .speed-dial__list {
+        -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
     }
+
+    &:not(.speed-dial--small) .speed-dial__list {
+        bottom: 100%;
+        padding-bottom: 4px;
+        left: 5px;
+
+        li {
+            margin: 0 0 10px 0;
+        }
+    }
+
+    &.speed-dial--small .speed-dial__list {
+        bottom: 100%;
+        padding-bottom: 1px;
+        left: 3px;
+
+        li {
+            margin: 0 0 9px 0;
+        }
+    }
+
 }
 
-.speed-dial--right .speed-dial__list {
+/* RIGHT */
+.speed-dial--right {
 
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-
-    bottom: 0;
-    padding-left: 10px;
-
-    li {
-        margin: 4px 0 0 4px;
+    .speed-dial__list {
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
     }
+
+    &:not(.speed-dial--small) .speed-dial__list {
+        bottom: 5px;
+        padding-left: 14px;
+
+        li {
+            margin: 0 10px 0 0;
+        }
+    }
+
+    &.speed-dial--small .speed-dial__list {
+        bottom: 3px;
+        padding-left: 12px;
+
+        li {
+            margin: 0 9px 0 0;
+        }
+    }
+
 }
 
-.speed-dial--left .speed-dial__list {
+/* LEFT */
+.speed-dial--left {
 
-    -webkit-flex-direction: row-reverse;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-
-    bottom: 0%;
-    padding-right: 10px;
-
-    li {
-        margin: 4px 4px 0 0;
+    .speed-dial__list {
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
     }
+
+    &:not(.speed-dial--small) .speed-dial__list {
+        bottom: 5px;
+        padding-right: 14px;
+
+        li {
+            margin: 0 0 0 10px;
+        }
+    }
+
+    &.speed-dial--small .speed-dial__list{
+        bottom: 3px;
+        padding-right: 12px;
+
+        li {
+            margin: 0 0 0 9px;
+        }
+    }
+
 }
 
-.speed-dial--down .speed-dial__list {
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+/* DOWN */
+.speed-dial--down {
 
-    top: 100%;
-    padding-top: 10px;
-
-    li {
-        margin: 4px 0 0 0;
+    .speed-dial__list {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
+
+    &:not(.speed-dial--small) .speed-dial__list {
+        top: 100%;
+        left: 5px;
+        padding-top: 4px;
+
+        li {
+            margin: 10px 0 0 0;
+        }
+    }
+
+    &.speed-dial--small .speed-dial__list {
+        top: 100%;
+        left: 3px;
+        padding-top: 1px;
+
+        li {
+            margin: 9px 0 0 0;
+        }
+    }
+
 }
 
+/* VISIBLE LIST */
 .speed-dial__list.is-visible {
     visibility: visible;
     pointer-events: auto;
@@ -212,7 +293,7 @@ $option-font-color: rgba(#000, .87);
         @include transform(scale(0));
     }
     to {
-        @include transform(scale(0.8));
+        @include transform(scale(1));
     }
 }
 
@@ -221,6 +302,6 @@ $option-font-color: rgba(#000, .87);
         @include transform(scale(0));
     }
     to {
-        @include transform(scale(0.8));
+        @include transform(scale(1));
     }
 }

@@ -2,7 +2,6 @@
 	font-family: 'Material Icons';
 	font-weight: normal;
 	font-style: normal;
-	font-size: 24px;
 	line-height: 1;
 	letter-spacing: normal;
 	text-transform: none;
@@ -19,9 +18,40 @@
     position: absolute;
     top: 50%;
     left: 50%;
+}
+
+.speed-dial__btn .material-icons {
+    font-size: 24px;
     -webkit-transform: translate(-12px,-12px);
     -ms-transform: translate(-12px,-12px);
     transform: translate(-12px,-12px);
     line-height: 24px;
     width: 24px;
+}
+
+.speed-dial--small .speed-dial__btn .material-icons {
+    font-size: 16px;
+    -webkit-transform: translate(-8px,-8px);
+    -ms-transform: translate(-8px,-8px);
+    transform: translate(-8px,-8px);
+    line-height: 16px;
+    width: 16px;
+}
+
+.speed-dial__option .material-icons {
+    font-size: 20px;
+    -webkit-transform: translate(-10px,-10px);
+    -ms-transform: translate(-10px,-10px);
+    transform: translate(-10px,-10px);
+    line-height: 20px;
+    width: 20px;
+}
+
+.speed-dial--small .speed-dial__option .material-icons {
+    font-size: 14px;
+    -webkit-transform: translate(-7px,-7px);
+    -ms-transform: translate(-7px,-7px);
+    transform: translate(-7px,-7px);
+    line-height: 14px;
+    width: 14px;
 }

@@ -1,12 +1,11 @@
 /**
 * The only required property for the container is the display property,
-* that must be inline-block 
+* that must be inline-block
 */
 .speed-dial {
   display: inline-block; }
 
-.speed-dial__btn,
-.speed-dial__option {
+.speed-dial__btn {
   box-sizing: border-box;
   display: inline-block;
   position: relative;
@@ -32,16 +31,47 @@
   color: rgba(0, 0, 0, 0.87);
   background: #EEEEEE; }
 
+.speed-dial__option {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  min-width: 46px;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  margin: auto;
+  border-radius: 50%;
+  font-size: 19px;
+  overflow: hidden;
+  line-height: normal;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  color: rgba(0, 0, 0, 0.87);
+  background: #EEEEEE; }
+
 /**
 * A set of modifiers for the container which will effect the button and the
 * options
 */
-.speed-dial--small .speed-dial__btn,
-.speed-dial--small .speed-dial__option {
+.speed-dial--small .speed-dial__btn {
   min-width: 32px;
   width: 32px;
   height: 32px;
   font-size: 16px; }
+
+.speed-dial--small .speed-dial__option {
+  min-width: 26px;
+  width: 26px;
+  height: 26px;
+  font-size: 12px; }
 
 .speed-dial--blue .speed-dial__btn {
   background: #2980b9;
@@ -67,10 +97,10 @@
 * Eventually you can change the speed dial button appearence when
 * the list of options is open.
 */
-.speed-dial--toggle .speed-dial__list.is-visible .speed-dial__btn {
-  box-shadow: none;
-  background: #EEEEEE;
-  color: rgba(0, 0, 0, 0.87); }
+.speed-dial--toggle .speed-dial__list.is-visible + .speed-dial__btn {
+  box-shadow: none !important;
+  background: #EEEEEE !important;
+  color: rgba(0, 0, 0, 0.87) !important; }
 
 /**
 * Below are the main rules for the list of options
@@ -114,42 +144,83 @@
   -webkit-transform: scale(0);
   transform: scale(0); }
 
+/* UP */
 .speed-dial--up .speed-dial__list {
-  bottom: 100%;
-  left: 0;
   -webkit-flex-direction: column-reverse;
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse; }
-  .speed-dial--up .speed-dial__list li {
-    margin: 0 0 4px 0; }
 
+.speed-dial--up:not(.speed-dial--small) .speed-dial__list {
+  bottom: 100%;
+  padding-bottom: 4px;
+  left: 5px; }
+  .speed-dial--up:not(.speed-dial--small) .speed-dial__list li {
+    margin: 0 0 10px 0; }
+
+.speed-dial--up.speed-dial--small .speed-dial__list {
+  bottom: 100%;
+  padding-bottom: 1px;
+  left: 3px; }
+  .speed-dial--up.speed-dial--small .speed-dial__list li {
+    margin: 0 0 9px 0; }
+
+/* RIGHT */
 .speed-dial--right .speed-dial__list {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
-  flex-direction: row;
-  bottom: 0;
-  padding-left: 10px; }
-  .speed-dial--right .speed-dial__list li {
-    margin: 4px 0 0 4px; }
+  flex-direction: row; }
 
+.speed-dial--right:not(.speed-dial--small) .speed-dial__list {
+  bottom: 5px;
+  padding-left: 14px; }
+  .speed-dial--right:not(.speed-dial--small) .speed-dial__list li {
+    margin: 0 10px 0 0; }
+
+.speed-dial--right.speed-dial--small .speed-dial__list {
+  bottom: 3px;
+  padding-left: 12px; }
+  .speed-dial--right.speed-dial--small .speed-dial__list li {
+    margin: 0 9px 0 0; }
+
+/* LEFT */
 .speed-dial--left .speed-dial__list {
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-  bottom: 0%;
-  padding-right: 10px; }
-  .speed-dial--left .speed-dial__list li {
-    margin: 4px 4px 0 0; }
+  flex-direction: row-reverse; }
 
+.speed-dial--left:not(.speed-dial--small) .speed-dial__list {
+  bottom: 5px;
+  padding-right: 14px; }
+  .speed-dial--left:not(.speed-dial--small) .speed-dial__list li {
+    margin: 0 0 0 10px; }
+
+.speed-dial--left.speed-dial--small .speed-dial__list {
+  bottom: 3px;
+  padding-right: 12px; }
+  .speed-dial--left.speed-dial--small .speed-dial__list li {
+    margin: 0 0 0 9px; }
+
+/* DOWN */
 .speed-dial--down .speed-dial__list {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  flex-direction: column;
-  top: 100%;
-  padding-top: 10px; }
-  .speed-dial--down .speed-dial__list li {
-    margin: 4px 0 0 0; }
+  flex-direction: column; }
 
+.speed-dial--down:not(.speed-dial--small) .speed-dial__list {
+  top: 100%;
+  left: 5px;
+  padding-top: 4px; }
+  .speed-dial--down:not(.speed-dial--small) .speed-dial__list li {
+    margin: 10px 0 0 0; }
+
+.speed-dial--down.speed-dial--small .speed-dial__list {
+  top: 100%;
+  left: 3px;
+  padding-top: 1px; }
+  .speed-dial--down.speed-dial--small .speed-dial__list li {
+    margin: 9px 0 0 0; }
+
+/* VISIBLE LIST */
 .speed-dial__list.is-visible {
   visibility: visible;
   pointer-events: auto;
@@ -185,13 +256,13 @@
     -webkit-transform: scale(0);
     transform: scale(0); }
   to {
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8); } }
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
 
 @keyframes enter {
   from {
     -webkit-transform: scale(0);
     transform: scale(0); }
   to {
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8); } }
+    -webkit-transform: scale(1);
+    transform: scale(1); } }

@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="./demo/vendor/waves.css">
 	<link rel="stylesheet" href="./demo/vendor/typebase.css">
 	<link rel="stylesheet" href="./demo/app.css">
+	<link rel="stylesheet" href="./dist/css/material-icons.css">
 	<link rel="stylesheet" href="./dist/css/speeddial.css">
 </head>
 <body>
@@ -116,7 +117,7 @@
 		<section>
 			<h3>Ripple effect:</h3>
 			<p>The ripple effect is given by the <a href="http://fian.my.id/Waves/">awesome plugin Waves</a></p>
-			<div id="blue-ripple-material" class="speed-dial speed-dial--material speed-dial--blue" style="position:relative;margin-top:20px">
+			<div id="blue-ripple-material" class="speed-dial speed-dial--material speed-dial--blue js-ripple" style="position:relative;margin-top:20px">
 				<ul class="speed-dial__list">
 					<li>
 						<button class="speed-dial__option">K</button>
@@ -135,7 +136,7 @@
 		<!-- Small example -->
 		<section>
 			<h3>Small:</h3>
-			<div id="small" class="speed-dial speed-dial--material speed-dial--pink speed-dial--small" style="position:relative;margin-top:20px">
+			<div id="small" class="speed-dial speed-dial--material speed-dial--pink speed-dial--small js-ripple" style="position:relative;margin-top:20px">
 				<ul class="speed-dial__list">
 					<li>
 						<button class="speed-dial__option">K</button>
@@ -148,6 +149,60 @@
 					</li>
 				</ul>
 				<button class="speed-dial__btn">X</button>
+			</div>
+		</section>
+
+		<!-- Toggle example -->
+		<section>
+			<h3>Toggle state:</h3>
+			<div id="toggle" class="speed-dial speed-dial--material speed-dial--pink speed-dial--toggle js-ripple" style="position:relative;margin-top:20px">
+				<ul class="speed-dial__list">
+					<li>
+						<button class="speed-dial__option">K</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">J</button>
+					</li>
+					<li>
+						<button class="speed-dial__option">Y</button>
+					</li>
+				</ul>
+				<button class="speed-dial__btn">X</button>
+			</div>
+		</section>
+
+		<!-- Material icons example -->
+		<section>
+			<h3>Google Material Icons:</h3>
+			<p>Big</p>
+			<div id="mat-icon-big" class="speed-dial speed-dial--material speed-dial--blue js-ripple" style="position:relative;margin-top:20px">
+				<ul class="speed-dial__list">
+					<li>
+						<button class="speed-dial__option"><i class="material-icons">local_printshop</i></button>
+					</li>
+					<li>
+						<button class="speed-dial__option"><i class="material-icons">content_copy</i></button>
+					</li>
+					<li>
+						<button class="speed-dial__option"><i class="material-icons">content_paste</i></button>
+					</li>
+				</ul>
+				<button class="speed-dial__btn"><i class="material-icons">add</i></button>
+			</div>
+			<p>small</p>
+			<div id="mat-icon-small" class="speed-dial speed-dial--material speed-dial--pink speed-dial--small js-ripple" style="position:relative;margin-top:20px">
+				<ul class="speed-dial__list">
+					<li>
+						<button class="speed-dial__option"><i class="material-icons">local_printshop</i></button>
+					</li>
+					<li>
+						<button class="speed-dial__option"><i class="material-icons">content_copy</i></button>
+					</li>
+					<li>
+						<button class="speed-dial__option"><i class="material-icons">content_paste</i></button>
+					</li>
+				</ul>
+				<button class="speed-dial__btn"><i class="material-icons">add</i></button>
 			</div>
 		</section>
 
@@ -186,9 +241,11 @@
 			var pink = speeddial('#pink', { direction: 'right'});
 			var material = speeddial('#material', { direction: 'right'});
 			var brmBtn = speeddial('#blue-ripple-material', { direction: 'right'});
-			var smallBtn = speeddial('#small', { direction: 'right'});
-			Waves.attach('#blue-ripple-material button');
-			Waves.attach('#small button');
+			var smallRBtn = speeddial('#small', { direction: 'right'});
+			var smallDBtn = speeddial('#toggle', { direction: 'right'});
+			var matIconBig = speeddial('#mat-icon-big', { direction: 'right'});
+			var matIconSmall = speeddial('#mat-icon-small', { direction: 'right'});
+			Waves.attach('.js-ripple button');
     		Waves.init();
 		}());
 	</script>
