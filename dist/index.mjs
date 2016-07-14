@@ -36,7 +36,7 @@ function getElement(selector, context) {
     var where = context || document;
     var element = where.querySelector(selector);
     try {
-        if (element === null) throw new Error('SpeedDial could not find any ${selector}');
+        if (element === null) throw new Error('SpeedDial could not find any ' + selector);
     } catch (err) {
         console.error(err.message);
     } finally {
