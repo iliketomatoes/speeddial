@@ -53,7 +53,7 @@ This Javascript library is UMD compliant, so you can consume it even like this:
 </div>
 ```
 
-## Plug in
+## Start it up
 
 The selector passed as first parameter must be the container's selector and must
 be unique:
@@ -111,7 +111,7 @@ your needs. Then compile it by running one of the following command:
 Those classes have to be added to the container. That is:
 
 ```html
-<div id="my-speed-dial" class="< PUT MODIFIERS HERE >">
+<div id="my-speed-dial" class="speed-dial < PUT MODIFIERS HERE >">
 	<ul class="speed-dial__list">
 		...
 	</ul>

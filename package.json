@@ -1,6 +1,6 @@
 {
   "name": "speeddial",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Speed dial button inspired by Google Material design",
   "main": "dist/speeddial.js",
   "jsnext:main": "dist/index.mjs",
@@ -37,7 +37,7 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-es2015-rollup": "^1.1.1",
     "babel-register": "^6.9.0",
-    "babelrc-rollup": "^1.1.0",
+    "babelrc-rollup": "^2.0.0",
     "chai": "^3.5.0",
     "eslint": "^3.0.1",
     "headr": "^0.1.0",
