@@ -1,0 +1,9 @@
+demo/
+lib/
+test/
+karma.conf.js
+rollup.config.js
+.gitignore
+.editorconfig
+.babelrc
+.eslintrc.json
