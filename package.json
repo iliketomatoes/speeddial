@@ -1,6 +1,6 @@
 {
   "name": "speeddial",
-  "version": "0.2.4",
+  "version": "0.2.6",
   "description": "Speed dial button inspired by Google Material design",
   "main": "dist/speeddial.js",
   "jsnext:main": "dist/index.mjs",
@@ -54,6 +54,7 @@
     "nodemon": "^1.9.2",
     "rollup": "^0.34.0",
     "rollup-plugin-babel": "^2.5.1",
-    "rollup-watch": "^2.4.0"
+    "rollup-watch": "^2.4.0",
+    "uglify-js": "^2.7.4"
   }
 }
