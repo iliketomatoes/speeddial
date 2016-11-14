@@ -1,0 +1,26 @@
+{
+  "name": "speeddial",
+  "description": "Speed dial button inspired by Google Material design",
+  "main": "dist/speeddial.js",
+  "authors": [
+    "Giancarlo Soverini"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "floating",
+    "button",
+    "speed",
+    "dial",
+    "menu"
+  ],
+  "homepage": "https://github.com/iliketomatoes/speeddial",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "demo",
+    "index.html"
+  ]
+}

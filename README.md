@@ -12,6 +12,12 @@ Download this plugin from the Github repository or install it through this comma
 $ npm install speeddial --save
 ```
 
+This library is also available through Bower package manager:
+
+```
+$ bower install speeddial --save
+```
+
 ## Required assets
 
 Import the CSS:
